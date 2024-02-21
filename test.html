@@ -4,54 +4,123 @@
     <meta charset="utf-8">
     <title>你好，GitHub</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
+    <style>
 
-    
+
+
+.playful span {
+  position: relative;
+  color: #5362F6;
+  text-shadow: textShadow(0.25, 6, #E485F8);
+  animation: scatter 1.75s infinite;
+}
+
+.playful span:nth-child(2n) {
+  color: #ED625C;
+  text-shadow: textShadow(0.25, 6, #F2A063);
+  animation-delay: 0.3s;
+}
+
+.playful span:nth-child(3n) {
+  color: #FFD913;
+  text-shadow: textShadow(0.25, 6, #6EC0A9);
+  animation-delay: 0.15s;
+}
+
+.playful span:nth-child(5n) {
+  color: #555BFF;
+  text-shadow: textShadow(0.25, 6, #E485F8);
+  animation-delay: 0.4s;
+}
+
+.playful span:nth-child(7n), .playful span:nth-child(11n) {
+  color: #FF9C55;
+  text-shadow: textShadow(0.25, 6, #FF5555);
+  animation-delay: 0.25s;
+}
+
+@keyframes scatter {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -10px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+h1 {
+  font-size: 65px;
+  text-transform: uppercase;
+  font-family: "Archivo Black", "Archivo", sans-serif;
+  font-weight: normal;
+  display: block;
+  width: 66px;
+  max-width: 10vw;
+  min-height: 10px;
+  /* height: 10px; */
+  text-align: center;
+  /* margin: 10rem auto; */
+  /* margin: calc(20vh - 5rem) auto; */
+}
+    </style>
   </head>
   <body>
-    <div class="col-lg-12 col-md-12 col-sm-12 ">
-      <div class="x_panel  p-0  boxShadow border-success border border-2 rounded rounded-3 overflow-hidden">
-        <div id="carouselExampleDark" class=" carousel carousel-dark slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
-              <!-- <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/1_no_poverty.jpg" class="d-block w-100"> -->
-              <img src="./1_no_poverty.jpg" class="d-block w-100">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
-              </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <!-- <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/2_zero_hunger.jpg" class="d-block w-100"> -->
-              <img src=./2_zero_hunger.jpg" class="d-block w-100">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <!-- <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/3_good_health_and_well_being.jpg" class="d-block w-100" > -->
-              <img src="./3_good_health_and_well_being.jpg" class="d-block w-100" >
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+    <div class="row" id="e_result">
+      <h1 class="playful" aria-label="Wash your hands">
+        <span aria-hidden="true">W</span><span aria-hidden="true">a</span><span aria-hidden="true">s</span><span aria-hidden="true">h</span><span aria-hidden="true"> </span><span aria-hidden="true">y</span><span aria-hidden="true">o</span><span aria-hidden="true">u</span><span aria-hidden="true">r</span><span aria-hidden="true"> </span><span aria-hidden="true">h</span><span aria-hidden="true">a</span><span aria-hidden="true">n</span><span aria-hidden="true">d</span><span aria-hidden="true">s</span><span aria-hidden="true">!</span>
+      </h1>
+    </div>
 
+
+    <div class="row" id="e_result">
+      <div class=" col-md-12 col-sm-12 ">
+        <div class="x_panel  p-0  boxShadow border-success border border-2 rounded rounded-3 overflow-hidden">
+          <div id="carouselExampleDark" class=" carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <!-- <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/1_no_poverty.jpg" class="d-block w-100"> -->
+                <img src="./1_no_poverty.jpg" class="d-block w-100">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>First slide label</h5>
+                  <p>Some representative placeholder content for the first slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <!-- <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/2_zero_hunger.jpg" class="d-block w-100"> -->
+                <img src=./2_zero_hunger.jpg" class="d-block w-100">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Second slide label</h5>
+                  <p>Some representative placeholder content for the second slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <!-- <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/3_good_health_and_well_being.jpg" class="d-block w-100" > -->
+                <img src="./3_good_health_and_well_being.jpg" class="d-block w-100" >
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Third slide label</h5>
+                  <p>Some representative placeholder content for the third slide.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+      </div>
     </div>
   </div>
 
