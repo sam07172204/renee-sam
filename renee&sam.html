@@ -475,8 +475,6 @@ h1 {
         <span aria-hidden="true">A</span><span aria-hidden="true">n</span><span aria-hidden="true">n</span><span aria-hidden="true">i</span><span aria-hidden="true">v</span><span aria-hidden="true">e</span><span aria-hidden="true">r</span><span aria-hidden="true">s</span><span aria-hidden="true">a</span><span aria-hidden="true">r</span><span aria-hidden="true">y</span><span aria-hidden="true">!</span><span aria-hidden="true">!</span><span aria-hidden="true">!</span>
       </h1>
     </div>
-
-
     <div class="row" id="e_result">
       <div class=" col-md-12 col-sm-12 ">
         <div class="x_panel  p-0  boxShadow border-success border border-2 rounded rounded-3 overflow-hidden">
@@ -516,7 +514,7 @@ h1 {
                 <img src="./6.jpg" class="d-block w-100" >
                 <div class="carousel-caption d-none d-md-block">
                   <h5 style="color:white">但有時候還是很可愛啦<!DOCTYPE html></h5>
-                  <p style="color:white"></p>
+                  <p style="color:white">最愛你可愛的時候了</p>
                 </div>
               </div>
               <div class="carousel-item">
@@ -540,9 +538,7 @@ h1 {
     </div>
   </div>
 
-  
             <!-- 彩蛋  -->
-
             <div class="modal fade" id="egg_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
               <div class="modal-dialog modal-xl" role="document">
                   <div class="modal-content">
@@ -598,9 +594,7 @@ h1 {
                                 </div>
                               </div>
                           </div>
-
                           <div id="chose_2" style="display: none;">
-
                             <div class="gift" onclick="gift_open()" id="gift_all" style="margin-left: 20%;">
                               <div class="gift__bow">
                                 <div class="gift__bow-left"></div>
@@ -617,18 +611,12 @@ h1 {
                             </div>
                             
                           </div>
-
-
                       </div>
                       <div class="modal-footer"  style="background-color: green;">
                         <div class="col-md-12 col-sm-12 text-center" >
                             <button type="button" onclick="close_egg()"  class="btn btn-primary">關掉它</button>
-
                         </div>
-                        
-                        
                     </div>
-
                   </div>
               </div>
           </div>
@@ -646,30 +634,31 @@ h1 {
   var count=0;
   var c_flag = '';
   var img_count = 0;
+  // 可以重整禮物頁面
   function reload_page(){
     var c_flag = '';
     var chose_1 = document.getElementById('chose_1');
     var chose_2 = document.getElementById('chose_2');
     chose_1.setAttribute('style','display:block');
     chose_2.setAttribute('style','display:none');
-
     var gift_all = document.getElementById('gift_all');
     gift_all.setAttribute('style','opacity: 1;');
-
     var img_id = document.getElementById('img_id'+img_count);
     img_id.setAttribute('style','display:none;');
     img_count++;
     
   }
+    // 彩蛋開啟
   function egg(){
     $("#egg_modal").modal('show'); 
   }
+    // 彩蛋關閉
   function close_egg(){
     $("#egg_modal").modal('hide'); 
     reload_page();
   }
+  // 選擇頁面
   function chose_card(type){
-    console.log(count)
     if(count ==0 ){
       c_flag = type;
     }
@@ -680,7 +669,6 @@ h1 {
     if(c_flag==type){
       count++;
     }
-
     if(count>1){
       var chose_1 = document.getElementById('chose_1');
       var chose_2 = document.getElementById('chose_2');
@@ -689,6 +677,7 @@ h1 {
     }
     
   }
+  // 禮物打開
   function gift_open(){
     var img_txt ='';
     if(c_flag=='card1'){
