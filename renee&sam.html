@@ -147,6 +147,19 @@ h1 {
 @media only screen and (max-width:990px){
     .box { margin: 0 0 30px; }
 }
+#chose_2_img {
+    width: 400px;
+    height: 300px;
+    left: 200px;
+    position: absolute;
+    z-index: -1;
+}
+
+#canvas {
+    margin-left: 200px;
+}
+
+
     </style>
   </head>
   <body>
@@ -253,54 +266,63 @@ h1 {
                           <h3 class="modal-title" id="show_his_title">想不到吧</h3>
                       </div>
                       <div class="modal-body">
-                          <div id="" class="col-md-12 col-sm-12 " style="width:100%; height:100%;margin:10px;font-size: 1vw;">
-                            <div class="container">
-                              <div class="row">
-                                  <div class="col-md-4 col-sm-6">
-                                      <div class="box">
-                                          <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/5_gender_equality.jpg">
-                                          <div class="box-content">
-                                              <div class="overlay-img">
-                                                  <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/5_gender_equality.jpg">
-                                              </div>
-                                              <div class="inner-content" onclick="chose_card('card1')">
-                                                  <h3 class="title">命運</h3>
-                                                  <span class="post">確定要這個?</span>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-4 col-sm-6">
-                                      <div class="box">
-                                          <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/5_gender_equality.jpg">
-                                          <div class="box-content">
-                                              <div class="overlay-img">
-                                                  <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/5_gender_equality.jpg">
-                                              </div>
-                                              <div class="inner-content"  onclick="chose_card('card2')">
-                                                  <h3 class="title">機會</h3>
-                                                  <span class="post">要不要改</span>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-4 col-sm-6">
-                                    <div class="box">
-                                        <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/5_gender_equality.jpg">
-                                        <div class="box-content">
-                                            <div class="overlay-img">
-                                                <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/5_gender_equality.jpg">
-                                            </div>
-                                            <div class="inner-content"  onclick="chose_card('card3')">
-                                                <h3 class="title">靠實力</h3>
-                                                <span class="post">要靠實力嗎</span>
+                          <div id="chose_1" class="col-md-12 col-sm-12 " style="width:100%; height:100%;margin:10px;font-size: 1vw;">
+                              <div class="container">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="box">
+                                            <img src="./5_gender_equality.jpg">
+                                            <div class="box-content">
+                                                <div class="overlay-img">
+                                                    <img src="./5_gender_equality.jpg">
+                                                </div>
+                                                <div class="inner-content" onclick="chose_card('card1')">
+                                                    <h3 class="title">命運</h3>
+                                                    <span class="post">確定要這個?</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="box">
+                                            <img src="./5_gender_equality.jpg">
+                                            <div class="box-content">
+                                                <div class="overlay-img">
+                                                    <img src="./5_gender_equality.jpg">
+                                                </div>
+                                                <div class="inner-content"  onclick="chose_card('card2')">
+                                                    <h3 class="title">機會</h3>
+                                                    <span class="post">要不要改</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                      <div class="box">
+                                          <img src="./5_gender_equality.jpg">
+                                          <div class="box-content">
+                                              <div class="overlay-img">
+                                                  <img src="./5_gender_equality.jpg">
+                                              </div>
+                                              <div class="inner-content"  onclick="chose_card('card3')">
+                                                  <h3 class="title">靠實力</h3>
+                                                  <span class="post">要靠實力嗎</span>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
                                 </div>
                               </div>
                           </div>
+
+                          <div id="chose_2" style="display: none;">
+                            <img id="chose_2_img" src="./6_clean_water_and_sanitation.jpg" alt="">
+
+                            <canvas id="canvas" width="400" height="300"></canvas>
+                        
                           </div>
+
+
                       </div>
                       <div class="modal-footer"  >
                         <div class="col-md-12 col-sm-12 text-center" >
@@ -323,6 +345,8 @@ h1 {
 
 
 <script>
+  var count=0;
+  var c_flag = '';
   function egg(){
     $("#egg_modal").modal('show'); 
   }
@@ -330,6 +354,64 @@ h1 {
     $("#egg_modal").modal('hide'); 
   }
   function chose_card(type){
-    console.log(type)
+    
+    if(count ==0 ){
+      c_flag = type;
+    }
+    if(c_flag!=type){
+      count=0;
+      c_flag = type;
+    }
+    if(c_flag==type){
+      count++;
+    }
+
+    console.log(count)
+    if(count>1){
+      console.log(type)
+      var chose_1 = document.getElementById('chose_1');
+      var chose_2 = document.getElementById('chose_2');
+      chose_1.innerText="";
+      chose_1.innerText="無法再次選擇";
+      chose_2.setAttribute('style','display:block');
+      
+
+  
+      var canvas = document.getElementById("canvas");
+    var context = canvas.getContext('2d');
+     //画蒙布
+    context.beginPath();
+    context.fillStyle= 'grey'
+    context.fillRect(0,0,400,300);
+    //鼠标按下开刮
+    canvas.onmousedown=function(){
+     canvas.onmousemove = function(){
+      //获取鼠标坐标
+      var x = event.clientX;
+      var y = event.clientY;
+      //destination-out    显示原来的不在后来区域的部分
+      context.globalCompositeOperation = "destination-out";
+      context.beginPath();
+      context.arc(x-200,y,30,0,Math.PI*2);
+      context.fill();  
+     }
+    }
+    //鼠标抬起不刮开
+    canvas.onmouseup=function(){
+     canvas.onmousemove = function(){ 
+     }
+    } 
+// 刮刮樂程式參考
+// 作者：芹丸子
+// 链接：https://juejin.cn/post/6972721238057680933
+// 来源：稀土掘金
+// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+    }
+    
   }
 </script>
+
+
+
+
