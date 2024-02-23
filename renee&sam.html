@@ -645,6 +645,7 @@ h1 {
                       <div class="modal-footer"  style="background-color: green;">
                         <div class="col-md-12 col-sm-12 text-center" >
                             <button type="button" onclick="close_egg()"  class="btn btn-primary">關掉它</button>
+
                         </div>
                         
                         
@@ -686,7 +687,6 @@ h1 {
     }
 
     if(count>1){
-      console.log(type)
       var chose_1 = document.getElementById('chose_1');
       var chose_2 = document.getElementById('chose_2');
       chose_1.innerText="";
@@ -695,10 +695,23 @@ h1 {
     
   }
   function gift_open(){
-    console.log('test')
+    if(c_flag=='card1'){
+      var img_txt = './5_gender_equality.jpg'
+    }
+    if(c_flag=='card2'){
+      var img_txt = './6_clean_water_and_sanitation.jpg'
+    }
+    if(c_flag=='card3'){
+      var img_txt = './4_quality_education.jpg'
+    }
     var gift_all = document.getElementById('gift_all');
     gift_all.setAttribute('style','opacity: 0;transition: opacity 0.5s ease-in-out;');
-    
+
+    var chose_2 = document.getElementById('chose_2');
+    var img = document.createElement('img');
+    img.setAttribute('src',img_txt);
+    chose_2.appendChild(img)
+
     
   }
 </script>
