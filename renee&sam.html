@@ -621,7 +621,6 @@ h1 {
                           </div>
 
                           <div id="chose_2" style="display: none;">
-                         
 
                             <div class="gift" onclick="gift_open()" id="gift_all" style="margin-left: 10%;">
                               <div class="gift__bow">
@@ -667,6 +666,12 @@ h1 {
 <script>
   var count=0;
   var c_flag = '';
+  function reload_page(){
+    var chose_1 = document.getElementById('chose_1');
+    var chose_2 = document.getElementById('chose_2');
+    chose_1.innerText('style','display:block');
+    chose_2.setAttribute('style','display:none');
+  }
   function egg(){
     $("#egg_modal").modal('show'); 
   }
@@ -689,20 +694,20 @@ h1 {
     if(count>1){
       var chose_1 = document.getElementById('chose_1');
       var chose_2 = document.getElementById('chose_2');
-      chose_1.innerText="";
+      chose_1.innerText('style','display:none');
       chose_2.setAttribute('style','display:block');
     }
     
   }
   function gift_open(){
     if(c_flag=='card1'){
-      var img_txt = './5_gender_equality.jpg'
+      var img_txt = './card1.png'
     }
     if(c_flag=='card2'){
-      var img_txt = './6_clean_water_and_sanitation.jpg'
+      var img_txt = './card2.png'
     }
     if(c_flag=='card3'){
-      var img_txt = './4_quality_education.jpg'
+      var img_txt = './card3.png'
     }
     var gift_all = document.getElementById('gift_all');
     gift_all.setAttribute('style','opacity: 0;transition: opacity 0.5s ease-in-out;');
