@@ -595,7 +595,7 @@ h1 {
                               </div>
                           </div>
                           <div id="chose_2" style="display: none;">
-                            <div class="gift" onclick="gift_open()" id="gift_all" style="margin-left: 20%;">
+                            <div class="gift" onclick="gift_open()" id="gift_all" style="margin-left: 18%;">
                               <div class="gift__bow">
                                 <div class="gift__bow-left"></div>
                                 <div class="gift__bow-right"></div>
@@ -642,7 +642,7 @@ h1 {
     chose_1.setAttribute('style','display:block');
     chose_2.setAttribute('style','display:none');
     var gift_all = document.getElementById('gift_all');
-    gift_all.setAttribute('style','opacity: 1;');
+    gift_all.setAttribute('style','opacity: 1;margin-left: 18%;');
     var img_id = document.getElementById('img_id'+img_count);
     img_id.setAttribute('style','display:none;');
     img_count++;
@@ -691,7 +691,7 @@ h1 {
     }
     
     var gift_all = document.getElementById('gift_all');
-    gift_all.setAttribute('style','opacity: 0;transition: opacity 2s ease-in-out;');
+    gift_all.setAttribute('style','margin-left: 18%;opacity: 0;transition: opacity 2s ease-in-out;');
     setTimeout(() => {
       gift_all.setAttribute('style','display:none');
       var chose_2 = document.getElementById('chose_2');
