@@ -621,9 +621,9 @@ h1 {
                           </div>
 
                           <div id="chose_2" style="display: none;">
-                          
+                         
 
-                            <div class="gift">
+                            <div class="gift" onclick="gift_open()" id="gift_all" style="margin-left: 30%;">
                               <div class="gift__bow">
                                 <div class="gift__bow-left"></div>
                                 <div class="gift__bow-right"></div>
@@ -685,7 +685,6 @@ h1 {
       count++;
     }
 
-    console.log(count)
     if(count>1){
       console.log(type)
       var chose_1 = document.getElementById('chose_1');
@@ -693,6 +692,13 @@ h1 {
       chose_1.innerText="";
       chose_2.setAttribute('style','display:block');
     }
+    
+  }
+  function gift_open(){
+    console.log('test')
+    var gift_all = document.getElementById('gift_all');
+    gift_all.setAttribute('style','opacity: 0;transition: opacity 0.5s ease-in-out;');
+    
     
   }
 </script>
