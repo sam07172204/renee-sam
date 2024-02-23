@@ -74,6 +74,79 @@ h1 {
   /* margin: 10rem auto; */
   /* margin: calc(20vh - 5rem) auto; */
 }
+
+.box{
+    background-color: #000;
+    font-family: 'Lobster', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+.box > img{
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+}
+.box:hover > img{
+    opacity: 0.5;
+    filter: blur(5px);
+    transform: scale(1.05);
+}
+.box .box-content{
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding: 5px 0 0;
+    transform: translateY(-50%);
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+}
+.box .box-content .overlay-img{
+    width: 50%;
+    margin: 0 auto;
+}
+.box .box-content .overlay-img img{
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: translateY(80%);
+    transition: all 0.3s ease 0.1s;
+}
+.box:hover .box-content .overlay-img img{
+    opacity: 1;
+    transform: translateY(0);
+}
+.box .box-content .inner-content{
+    background-color: #000;
+    padding: 10px 15px;
+    opacity: 0;
+    transform: scaleY(1.5);
+    position: relative;
+    transition: all 0.3s ease;
+}
+.box:hover .box-content .inner-content{
+    opacity: 1;
+    transform: scaleY(1);
+}
+.box .title{
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0;
+}
+.box .post{
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+@media only screen and (max-width:990px){
+    .box { margin: 0 0 30px; }
+}
     </style>
   </head>
   <body>
@@ -101,7 +174,7 @@ h1 {
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active" >
-                <!-- <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/1_no_poverty.jpg" class="d-block w-100"> -->
+                <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/1_no_poverty.jpg" class="d-block w-100">
                 <img src="./1_no_poverty.jpg" class="d-block w-100">
                 <div class="carousel-caption d-none d-md-block">
                   <h5>回到一年前</h5>
@@ -181,7 +254,52 @@ h1 {
                       </div>
                       <div class="modal-body">
                           <div id="" class="col-md-12 col-sm-12 " style="width:100%; height:100%;margin:10px;font-size: 1vw;">
-                              test
+                            <div class="container">
+                              <div class="row">
+                                  <div class="col-md-4 col-sm-6">
+                                      <div class="box">
+                                          <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/5_gender_equality.jpg">
+                                          <div class="box-content">
+                                              <div class="overlay-img">
+                                                  <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/5_gender_equality.jpg">
+                                              </div>
+                                              <div class="inner-content" onclick="chose_card('card1')">
+                                                  <h3 class="title">命運</h3>
+                                                  <span class="post">確定要這個?</span>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4 col-sm-6">
+                                      <div class="box">
+                                          <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/5_gender_equality.jpg">
+                                          <div class="box-content">
+                                              <div class="overlay-img">
+                                                  <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/5_gender_equality.jpg">
+                                              </div>
+                                              <div class="inner-content"  onclick="chose_card('card2')">
+                                                  <h3 class="title">機會</h3>
+                                                  <span class="post">要不要改</span>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4 col-sm-6">
+                                    <div class="box">
+                                        <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/5_gender_equality.jpg">
+                                        <div class="box-content">
+                                            <div class="overlay-img">
+                                                <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/5_gender_equality.jpg">
+                                            </div>
+                                            <div class="inner-content"  onclick="chose_card('card3')">
+                                                <h3 class="title">靠實力</h3>
+                                                <span class="post">要靠實力嗎</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                          </div>
                           </div>
                       </div>
                       <div class="modal-footer"  >
@@ -210,5 +328,8 @@ h1 {
   }
   function close_egg(){
     $("#egg_modal").modal('hide'); 
+  }
+  function chose_card(type){
+    console.log(type)
   }
 </script>
