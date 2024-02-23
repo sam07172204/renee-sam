@@ -645,12 +645,21 @@ h1 {
 <script>
   var count=0;
   var c_flag = '';
+  var img_count = 0;
   function reload_page(){
     var c_flag = '';
     var chose_1 = document.getElementById('chose_1');
     var chose_2 = document.getElementById('chose_2');
     chose_1.setAttribute('style','display:block');
     chose_2.setAttribute('style','display:none');
+
+    var gift_all = document.getElementById('gift_all');
+    gift_all.setAttribute('style','opacity: 1;');
+
+    var img_id = document.getElementById('img_id'+img_count);
+    img_id.setAttribute('style','display:none;');
+    img_count++;
+    
   }
   function egg(){
     $("#egg_modal").modal('show'); 
@@ -660,7 +669,7 @@ h1 {
     reload_page();
   }
   function chose_card(type){
-    
+    console.log(count)
     if(count ==0 ){
       c_flag = type;
     }
@@ -681,15 +690,17 @@ h1 {
     
   }
   function gift_open(){
+    var img_txt ='';
     if(c_flag=='card1'){
-      var img_txt = './card1_gift.jpg'
+      img_txt = './card1_gift.jpg'
     }
     if(c_flag=='card2'){
-      var img_txt = './card2_gift.jpg'
+      img_txt = './card2_gift.jpg'
     }
     if(c_flag=='card3'){
-      var img_txt = './card3_gift.jpg'
+      img_txt = './card3_gift.jpg'
     }
+    
     var gift_all = document.getElementById('gift_all');
     gift_all.setAttribute('style','opacity: 0;transition: opacity 2s ease-in-out;');
     setTimeout(() => {
@@ -697,8 +708,9 @@ h1 {
       var chose_2 = document.getElementById('chose_2');
       var img = document.createElement('img');
       img.setAttribute('src',img_txt);
-      img.setAttribute('width','200');
-      img.setAttribute('height','400');
+      img.setAttribute('width','400');
+      img.setAttribute('height','600');
+      img.setAttribute('id','img_id'+img_count);
       chose_2.appendChild(img);
     }, 1500);
     
