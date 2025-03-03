@@ -2,170 +2,475 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>你好，GitHub</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sam&Renee</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
-    <style>
+
+
+  </head>
+  <link href="http://tnvqis03/Dashboard_Template/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+
+    @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --dark-color: 191F1D_1;
+  --mid-dark: 555A57_1;
+  --light-color: ECE0C8_1;
+  --mid-light: 949993_1;
+  --shadow: #0005;
+  --linear-rainbow: linear-gradient(
+    to right,EDE6BF_1,ECC947_1,CB5A31_1,6F5D79_1,4E779A_1
+  );
+  --circle-rainbow: radial-gradient(
+    circle at left top,EDE6BF_1,ECC947_1,CB5A31_1,6F5D79_1,4E779A_1
+  );
+  --noise-texture: url(https://i.gyazo.com/a26366e538851a5c569ff648e99b7fd4.png);
+  --gif-texture: url(https://64.media.tumblr.com/da60c13b478dda09ab90c27e880983b8/tumblr_nd4pwdPKdc1tun3l0o1_1280.gifv);
+  --mulish: "Mulish", sans-serif;
+  --playfair: "Playfair Display", serif;
+  --dm:"DM Serif Display", serif;
+  --main-transition:all 0.2s ease-in-out;
+}
+
 
 body {
-  background-color: #141114;
-  background-image: linear-gradient(335deg, black 23px, transparent 23px),
-    linear-gradient(155deg, black 23px, transparent 23px),
-    linear-gradient(335deg, black 23px, transparent 23px),
-    linear-gradient(155deg, black 23px, transparent 23px);
-  background-size: 58px 58px;
-  background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+  margin: 0;
+  height: 10vh
+  /* height: 100%;
+  width: 100%; */
 }
 
-.playful span {
-  position: relative;
-  color: #5362F6;
-  text-shadow: textShadow(0.25, 6, #E485F8);
-  animation: scatter 1.75s infinite;
-}
-
-.playful span:nth-child(2n) {
-  color: #ED625C;
-  text-shadow: textShadow(0.25, 6, #F2A063);
-  animation-delay: 0.3s;
-}
-
-.playful span:nth-child(3n) {
-  color: #FFD913;
-  text-shadow: textShadow(0.25, 6, #6EC0A9);
-  animation-delay: 0.15s;
-}
-
-.playful span:nth-child(5n) {
-  color: #555BFF;
-  text-shadow: textShadow(0.25, 6, #E485F8);
-  animation-delay: 0.4s;
-}
-
-.playful span:nth-child(7n), .playful span:nth-child(11n) {
-  color: #FF9C55;
-  text-shadow: textShadow(0.25, 6, #FF5555);
-  animation-delay: 0.25s;
-}
-
-@keyframes scatter {
-  0% {
-    top: 0;
-  }
-  50% {
-    top: -10px;
-  }
-  100% {
-    top: 0;
-  }
+html,body {
+  /* height: 100%;
+  width: 100%; */
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: var(--dark-color);
+  background-image: var(--noise-texture);
+  background-blend-mode: overlay;
 }
 
 h1 {
-  font-size: 65px;
-  text-transform: uppercase;
-  font-family: "Archivo Black", "Archivo", sans-serif;
-  font-weight: normal;
-  display: block;
-  width: 66px;
-  max-width: 10vw;
-  min-height: 10px;
-  /* height: 10px; */
-  text-align: center;
-  /* margin: 10rem auto; */
-  /* margin: calc(20vh - 5rem) auto; */
+  margin: 0;
+  font-family: var(--mulish);
+  font-weight: 1000;
+  font-size: 64px;
+  color: var(--light-color);
 }
-    </style>
-  </head>
+
+h2 {
+  margin: 0;
+  font-family: var(--playfair);
+  font-size: 16px;
+  color: var(--mid-light);
+}
+
+h3 {
+  margin: 0;
+  font-family: var(--dm);
+  font-size: 24px;
+  color: var(--mid-light);
+}
+
+p {
+  font-family: var(--mulish);
+  font-weight: 700;
+  width: 390px;
+  color: var(--mid-light);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  box-sizing: border-box;
+  margin: 30px 128px;
+  gap: 48px;
+  font-size: 16px;
+}
+
+a {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: var(--mulish);
+  color: var(--mid-light);
+  font-weight: 400;
+  text-decoration: none;
+  transition: var(--main-transition);
+}
+
+a:not(.buy, .buy-cta, .learn) {
+  width: 64px;
+}
+
+a:hover:not(.buy, .buy-cta, .learn) {
+  transition: var(--main-transition);
+  font-weight: 900;
+  text-shadow: 0 0 8px var(--light-color);
+}
+
+.scotch-container {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  height: 580px;
+  width: 960px;
+  background-image: linear-gradient(
+    150deg,
+    var(--dark-color) 60.2%,
+    var(--mid-dark) 60.28%,
+    var(--mid-dark) 60.7%,
+    var(--dark-color) 60.78%,
+    var(--dark-color) 61.4%,
+    var(--mid-dark) 61.48%,
+    var(--mid-dark) 62.6%,
+    var(--dark-color) 62.68%,
+    var(--dark-color) 63.4%,
+    var(--mid-dark) 63.48%,
+    var(--mid-dark) 64.6%,
+    var(--dark-color) 64.68%,
+    var(--dark-color) 65.4%,
+    var(--mid-dark) 65.48%,
+    var(--mid-dark) 67.4%,
+    var(--dark-color) 67.48%,
+    var(--dark-color) 68.4%,
+    var(--mid-dark) 68.48%,
+    var(--mid-dark) 71.4%,
+    var(--dark-color) 71.48%,
+    var(--dark-color) 72.4%,
+    var(--mid-dark) 72.48%,
+    var(--mid-dark) 76.4%,
+    var(--dark-color) 76.48%,
+    var(--dark-color) 77.4%,
+    var(--mid-dark) 77.48%,
+    var(--mid-dark) 81.4%,
+    var(--dark-color) 81.48%,
+    var(--dark-color) 82.4%,
+    var(--mid-dark) 82.48%,
+    var(--mid-dark) 87.4%,
+    var(--dark-color) 87.48%
+  );
+  box-sizing: border-box;
+/*   scale:2; */
+  animation: spawn 2s ease-in-out forwards;
+}
+
+.scotch-container:before {
+  content: "";
+  display: flex;
+  position: absolute;
+  background-image:var(--noise-texture);
+  height: 580px;
+  width: 960px;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.scotch-container:hover:after {
+  content: "";
+  display: flex;
+  position: absolute;
+  background-image:var(--gif-texture);
+  height: 580px;
+  width: 960px;
+  translate:0px 0px;
+  background-repeat: no-repeat;
+  background-position-y:-20px;
+  background-size: cover;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  opacity: 64%;
+  z-index: 3;
+}
+
+.main-container {
+  padding: 0;
+  margin: auto;
+  display: grid;
+  height: 460px;
+  gap: 64px;
+  place-items: center;
+  box-sizing: border-box;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-sphere-container {
+  display: flex;
+  width: 125%;
+  gap: 128px;
+  align-items: center;
+}
+
+.sphere {
+  display: grid;
+  height: 200px;
+  width: 200px;
+  background-image: var(--circle-rainbow);
+  border: 3px solid var(--dark-color);
+  border-radius: 50%;
+  transition: all 0.4s;
+  box-shadow: 0px 0px var(--shadow);
+}
+
+.sphere:hover {
+  scale: 1.1;
+  box-shadow: 16px 16px var(--shadow);
+  transition: var(--main-transition);
+}
+
+.buy {
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  border: 1px solid var(--mid-light);
+  height: 40px;
+  width: 128px;
+  transition: var(--main-transition);
+}
+
+.buy:hover {
+  scale: 1.1;
+  rotate:-2deg;
+  background: var(--light-color);
+  color: var(--dark-color);
+  border: 1px solid var(--light-color);
+  transition: var(--main-transition);
+}
+
+.buy-cta {
+  display: grid;
+  place-items: center;
+  color: var(--dark-color);
+  font-weight: 900;
+  background-image: linear-gradient(
+    to right,
+    var(--light-color),
+    var(--light-color)
+  );
+  height: 40px;
+  width: 200px;
+  font-size: 16px;
+  transition: var(--main-transition);
+}
+
+.buy-cta:hover {
+  scale: 1.1;
+  rotate:2deg;
+  color: var(--light-color);
+  background-image: var(--linear-rainbow);
+  transition: var(--main-transition);
+}
+
+.learn-arrow {
+  margin: -40px 0;
+  text-align: center;
+  transition: var(--main-transition);
+}
+
+.learn:hover {
+  scale: 1.2;
+  font-weight: 900;
+}
+
+.learn {
+  display: grid;
+  color: var(--light-color);
+  font-family: var(--mulish);
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 12px;
+  transition: var(--main-transition);
+}
+
+.arrow {
+  margin: -6px;
+  padding: 0;
+  font-size: 32px;
+  color: var(--light-color);
+}
+
+@keyframes spawn{
+  0%{
+    box-shadow: 0 0 0 var(--shadow);
+    opacity:0%;
+  }
+  100%{
+    box-shadow: 0 0 32px var(--shadow);
+    opacity:100%;
+  }
+}
+
+@import url("https://unpkg.com/papercss@1.9.2/dist/paper.css") layer(csspaper);
+
+.card-list:has(li:hover) li:not(:hover) {
+  filter: blur(4px)
+}
+
+
+
+h1 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin: 0 0 2rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  transition: all 150ms ease-in-out;
+}
+
+li::before {
+  content: "";
+}
+
+img {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  margin-bottom: .6rem;
+}
+
+a {
+  background: none;
+}
+
+.paper {
+  padding: 1.5rem;
+}
+
+li a {
+  padding-inline-start: 1rem;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.box {
+  flex: 1;
+  overflow: hidden;
+  transition: .5s;
+  margin: 0 2%;
+  box-shadow: 0 20px 30px rgba(0,0,0,.1);
+  line-height: 0;
+}
+
+.box > img {
+  width: 200%;
+  height: calc(100% - 10vh);
+  object-fit: cover;
+  transition: .5s;
+}
+
+.box > span {
+  font-size: 3.8vh;
+  display: block;
+  text-align: center;
+  height: 10vh;
+  line-height: 2.6;
+}
+
+.box:hover { flex: 1 1 50%; }
+.box:hover > img {
+  width: 100%;
+  height: 100%;
+}
+
+  </style>
   <body>
-    <div class="row" id="e_result">
-      <h1 class="playful" aria-label="Wash your hands">
-        <span aria-hidden="true">H</span><span aria-hidden="true">A</span><span aria-hidden="true">p</span><span aria-hidden="true">p</span><span aria-hidden="true">y</span>
-        <span aria-hidden="true">F</span><span aria-hidden="true">i</span><span aria-hidden="true">r</span><span aria-hidden="true">s</span><span aria-hidden="true">t</span>
-        <span aria-hidden="true">A</span><span aria-hidden="true">n</span><span aria-hidden="true">n</span><span aria-hidden="true">i</span><span aria-hidden="true">v</span><span aria-hidden="true">e</span><span aria-hidden="true">r</span><span aria-hidden="true">s</span><span aria-hidden="true">a</span><span aria-hidden="true">r</span><span aria-hidden="true">y</span><span aria-hidden="true">!</span><span aria-hidden="true">!</span><span aria-hidden="true">!</span>
-      </h1>
+    <div id="page_1" class="col-md-12 col-sm-12">
+      <section class="scotch-container" >
+        <nav>
+
+        </nav>
+        <article class="main-container">
+          <div class="text-sphere-container">
+            <hgroup class="text-container">
+              <h1 style="color: orangered;">Scotch</h1>
+              <h2>VIDEOCASSETTE EG</h2>
+              <h3>2025.03.05</h3>
+              <p>Designed by the inventors of videotape, this Scotch EG Videocasette gives your superior performance</p>
+            </hgroup>
+            </a>
+          </div>
+          <footer class="learn-arrow"  onclick="more_fn('page_1')">
+            <div class="learn" onclick="more_fn('page_1')">Read MORE</div>
+            <div class="arrow"  onclick="more_fn('page_1')">🢓</div>
+          </footer>
+        </article>
+      </section>
     </div>
 
 
-    <div class="row" id="e_result">
-      <div class=" col-md-12 col-sm-12 ">
-        <div class="x_panel  p-0  boxShadow border-success border border-2 rounded rounded-3 overflow-hidden">
-          <div id="carouselExampleDark" class=" carousel carousel-dark slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" >
-                <!-- <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/1_no_poverty.jpg" class="d-block w-100"> -->
-                <img src="./1_no_poverty.jpg" class="d-block w-100">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>剛開始還是好瘦</h5>
-                  <p></p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <!-- <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/2_zero_hunger.jpg" class="d-block w-100"> -->
-                <img src=./2_zero_hunger.jpg" class="d-block w-100">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>一起度過生日</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <!-- <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/3_good_health_and_well_being.jpg" class="d-block w-100" > -->
-                <img src="./3_good_health_and_well_being.jpg" class="d-block w-100" >
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>參與我的生活</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <!-- <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/4_quality_education.jpg" class="d-block w-100" > -->
-                <img src="./4_quality_education.jpg" class="d-block w-100" >
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>雖然有時候很兇</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <!-- <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/5_gender_equality.jpg" class="d-block w-100" > -->
-                <img src="./5_gender_equality.jpg" class="d-block w-100" >
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>但還是很可愛</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <!-- <img src="http://tnvqis03/user21027146/Dashboard_Template/build/images/sdgs/6_clean_water_and_sanitation.jpg" class="d-block w-100" > -->
-                <img src="./6_clean_water_and_sanitation.jpg" class="d-block w-100" >
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>參與我的生活</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+    <div class="container" id="page_2" style="display: none;"  class="col-md-12 col-sm-12">
+      <div class="box">
+        <img src="https://source.unsplash.com/1000x800">
+        <span>CSS</span>
+      </div>
+      <div class="box">
+        <img src="./1.jpg">
+        <span>Image</span>
+      </div>
+      <div class="box">
+        <img src="./3.jpg">
+        <span>Hover</span>
+      </div>
+      <div class="box">
+        <img src="./5.jpg">
+        <span>Effect</span>
       </div>
     </div>
-  </div>
 
 
- 
+
   </body>
 </html>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+
+
+<script>
+  function more_fn(type){
+    console.log(type)
+    if(type=='page_1'){
+      var close_page='page_2';
+    }
+    if(type=='page_2'){
+      var close_page='page_1';
+    }
+
+    var page_open = document.getElementById(type);
+    var page_close = document.getElementById(close_page);
+    page_open.setAttribute('style','display:none');
+    page_close.setAttribute('style','display:block');
+
+  }
+</script>
