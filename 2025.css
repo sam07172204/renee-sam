@@ -11,7 +11,7 @@ body {
   .gallery {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: 120%;
     overflow: hidden;
     max-width: 1300px;
     margin: auto;
@@ -37,19 +37,19 @@ body {
       height: 100vh;
     }
     .gallery__strip.one {
-      animation: 60s move-it ease alternate infinite 5s;
+      animation: 30s move-it ease alternate infinite 3s;
       transform: translateY(2%);
     }
     .gallery__strip.three {
-      animation: 70s move-it ease alternate infinite 6s;
+      animation: 20s move-it ease alternate infinite 3.2s;
       transform: translateY(2%);
     }
     .gallery__strip.two {
-      animation: 58s move-it-2 ease alternate infinite 5s;
+      animation: 28s move-it-2 ease alternate infinite 2.8s;
       transform: translateY(-50%);
     }
     .gallery__strip.four {
-      animation: 65s move-it-2 ease alternate infinite 5.5s;
+      animation: 35s move-it-2 ease alternate infinite 3.5s;
       transform: translateY(-50%);
     }
     .gallery__strip:hover {
@@ -65,7 +65,7 @@ body {
     padding-bottom: 3rem;
   }
   .photo__image img {
-    width: 90%;
+    width: 100%;
     transform: translateX(30%);
     transition: 1s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
   }
@@ -103,4 +103,69 @@ body {
     45% {
       transform: translateY(5%);
     }
+  }
+
+
+
+h1 {
+    font-size: clamp(3rem, 8vmin, 8rem);
+    font-family: sans-serif;
+    color: hsl(0 0% 98%);
+  }
+
+  .underlined {
+    /*   background: red; */
+    position: relative;
+  }
+
+  .underline-mask:after {
+    content: "";
+    position: absolute;
+    top: 95%;
+    width: 150%;
+    aspect-ratio: 3 / 1;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    border: 6px solid hsl(280 80% 50%);
+    /* Use a conic gradient mask to hide and show the bits you want */
+    --spread: 140deg;
+    --start: 290deg;
+    mask: conic-gradient(
+      from var(--start),
+      white 0 var(--spread),
+      transparent var(--spread)
+    );
+  }
+
+  .underline-overflow {
+    display: inline-block;
+    /* A little extra padding and overflow hidden   */
+    overflow: hidden;
+    padding-bottom: clamp(1rem, 2vmin, 2rem);
+  }
+  .underline-overflow:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    height: 150%;
+    aspect-ratio: 2.5 / 1;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    border-radius: 50%;
+    border: 6px solid hsl(10 80% 50%);
+  }
+
+  .underline-clip:after {
+    content: "";
+    position: absolute;
+    top: 95%;
+    width: 150%;
+    aspect-ratio: 3 / 1;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    border: 6px solid hsl(130 80% 50%);
+    /* Use a clip-path to hide and show the bits you want */
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
   }
